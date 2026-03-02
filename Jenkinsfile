@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         IMAGE_NAME   = "mini-api"
-        BASE_URL     = "http://localhost:3000"
+        BASE_URL     = "http://host.docker.internal:3000"
         ARTIFACT_DIR = "artifacts"
     }
 

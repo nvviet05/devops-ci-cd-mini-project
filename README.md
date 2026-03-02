@@ -152,10 +152,3 @@ Then open `http://localhost:8080`, configure pipeline pointing to this repo's `J
 This project is built as a DevOps/Automation practice project for internship applications, focusing on CI/CD, integration testing, and pipeline troubleshooting.
 
 ---
-
-## CV Bullets
-
-- Built a **Jenkins-based CI/CD pipeline** for a Node.js API with stages for checkout, dependency installation, unit testing, Docker image build, service startup, and integration testing.
-- Wrote **Python and Bash automation scripts** for health checks, service readiness waiting, and log collection.
-- Used **Docker/Docker Compose** to create a reproducible test environment and performed **API integration testing** using curl/Postman/Newman.
-- Practiced debugging pipeline failures, environment issues, and build/test integration in a Linux-based workflow.

@@ -62,6 +62,10 @@ devops-ci-cd-mini-project/
 
 ---
 
+## Pipeline Screenshot
+
+![Jenkins Pipeline Success](docs/pipeline-success.pdf)
+
 ## Pipeline Stages (Jenkinsfile)
 
 1. **Checkout** — pull source from SCM

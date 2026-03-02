@@ -64,7 +64,7 @@ devops-ci-cd-mini-project/
 
 ## Pipeline Screenshot
 
-![Jenkins Pipeline Success](docs/pipeline-success.pdf)
+![Jenkins Pipeline Success](docs/pipeline-success.png)
 
 ## Pipeline Stages (Jenkinsfile)
 

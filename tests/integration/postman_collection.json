@@ -1,0 +1,101 @@
+{
+    "info": {
+        "name": "devops-ci-cd-mini-project",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": "Integration tests for the DevOps CI/CD mini project API"
+    },
+    "item": [
+        {
+            "name": "GET /health",
+            "event": [
+                {
+                    "listen": "test",
+                    "script": {
+                        "exec": [
+                            "pm.test('Status code is 200', function () {",
+                            "  pm.response.to.have.status(200);",
+                            "});",
+                            "pm.test('Response has status ok', function () {",
+                            "  const body = pm.response.json();",
+                            "  pm.expect(body.status).to.eql('ok');",
+                            "});",
+                            "pm.test('Response has timestamp', function () {",
+                            "  const body = pm.response.json();",
+                            "  pm.expect(body).to.have.property('timestamp');",
+                            "});"
+                        ],
+                        "type": "text/javascript"
+                    }
+                }
+            ],
+            "request": {
+                "method": "GET",
+                "url": "{{baseUrl}}/health"
+            }
+        },
+        {
+            "name": "GET /api/version",
+            "event": [
+                {
+                    "listen": "test",
+                    "script": {
+                        "exec": [
+                            "pm.test('Status code is 200', function () {",
+                            "  pm.response.to.have.status(200);",
+                            "});",
+                            "pm.test('Response has version property', function () {",
+                            "  const body = pm.response.json();",
+                            "  pm.expect(body).to.have.property('version');",
+                            "});"
+                        ],
+                        "type": "text/javascript"
+                    }
+                }
+            ],
+            "request": {
+                "method": "GET",
+                "url": "{{baseUrl}}/api/version"
+            }
+        },
+        {
+            "name": "POST /api/echo",
+            "event": [
+                {
+                    "listen": "test",
+                    "script": {
+                        "exec": [
+                            "pm.test('Status code is 200', function () {",
+                            "  pm.response.to.have.status(200);",
+                            "});",
+                            "pm.test('Response echoes sent body', function () {",
+                            "  const body = pm.response.json();",
+                            "  pm.expect(body.received).to.eql({ message: 'hello-ci' });",
+                            "});"
+                        ],
+                        "type": "text/javascript"
+                    }
+                }
+            ],
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\"message\": \"hello-ci\"}"
+                },
+                "url": "{{baseUrl}}/api/echo"
+            }
+        }
+    ],
+    "variable": [
+        {
+            "key": "baseUrl",
+            "value": "http://localhost:3000"
+        }
+    ]
+}

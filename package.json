@@ -1,0 +1,20 @@
+{
+    "name": "devops-ci-cd-mini-project",
+    "version": "1.0.0",
+    "description": "Mini CI/CD project with Jenkins, Docker, and integration tests",
+    "main": "src/app.js",
+    "scripts": {
+        "start": "node src/app.js",
+        "test": "jest --runInBand",
+        "test:unit": "jest --runInBand",
+        "test:integration:bash": "bash tests/integration/integration_test.sh",
+        "test:integration:newman": "newman run tests/integration/postman_collection.json --env-var baseUrl=http://localhost:3000"
+    },
+    "dependencies": {
+        "express": "^4.19.2"
+    },
+    "devDependencies": {
+        "jest": "^29.7.0",
+        "supertest": "^7.0.0"
+    }
+}
